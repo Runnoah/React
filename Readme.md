@@ -13,7 +13,7 @@
 
 ## 📂 Contenido del Repositorio
 
-| Ejercicio | Descripción
+| Ejercicio | Descripción | 
 | :--- | :--- | :--- |
 | **my-react-app** | Mis primeros pasos en React.
 
