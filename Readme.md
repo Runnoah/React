@@ -14,7 +14,7 @@
 ## 📂 Contenido del Repositorio
 
 | Ejercicio | Descripción | 
-| :--- | :--- | :--- |
+| :--- | :--- | 
 | **my-react-app** | Mis primeros pasos en React.
 
 ---
