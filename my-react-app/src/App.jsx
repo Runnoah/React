@@ -1,38 +1,25 @@
-function App() { 
+import { useState } from "react"
+import PropTypes from "prop-types"
 
-    const users = [
-        { id: 1, name: 'Jose', role: 'Web Developer' },
-        { id: 2, name: 'Estefanía', role: 'Web Designer' },
-        { id: 3, name: 'Rubén', role: 'Team Leader' },
-        { id: 4, name: 'Klara', role: 'Project Manager' },
-        { id: 5, name: 'Miguel', role: 'Backend Developer' }
-    ]
-    
-    const techClass = 'tec-estilo';
-    const managementClass = 'equipo-estilo';
-    
+function ParentComponent() {
+    const [name, setName] = useState("Juanaco")
+    return <ChildComponent name={name} setName={setName} />
+}
+
+export default ParentComponent
+
+function ChildComponent(props) {
     return (
         <>
-        <p>Lista de usuarios activos:</p>
-        <ul>
-        {users.map(function(user) {
-            let estiloAplicado;
-
-          if (user.role.includes('Developer') || user.role.includes('Designer')) {
-            estiloAplicado = techClass;
-          } else {
-            estiloAplicado = managementClass;
-          }            
-          
-          return (
-                <li key={user.id} className={estiloAplicado}>
-                    {user.name} - {user.role}
-                </li>
-                );
-        })}
-        </ul>
+        <h1>Hello {props.name}</h1>
+        <button onClick={() => props.setName("Juanky")}>Change
+        Name</button>
+        <br/>
+        <button onClick={() => props.setName("Miguel")}>Alternative Name</button>
         </>
     )
 }
-
-export default App
+ChildComponent.propTypes = {
+    name: PropTypes.string.isRequired,
+    setName: PropTypes.func.isRequired
+}
