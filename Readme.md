@@ -6,8 +6,8 @@
 
 ## 🚀 Tecnologías utilizadas
 * **Framework:** [React.js](https://reactjs.org/)
-* **Tooling:** Vite / Create React App
-* **Estilos:** Tailwind CSS / CSS Modules
+* **Tooling:** Vite 
+* **Estilos:** Tailwind CSS / CSS 
 
 ---
 
