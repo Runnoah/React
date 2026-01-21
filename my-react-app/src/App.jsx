@@ -1,29 +1,38 @@
 import { useState } from 'react'
 
-export default function App() {
-    const [user, setUser] = useState(null)
-    const [newEmails, setNewEmails] = useState(0)
+function App() {
 
-    const button = user
-        ? <button onClick={() => setUser(null)}>Logout</button>
-        : <button onClick={() => setUser({ name: 'Antoñico'
-})}>Login</button>
+    const [isParagraphVisible, setIsParagraphVisible] = useState(true)
+    const [contador, setContador] = useState(0)
+    const toggleStatus = () => {
+    setIsParagraphVisible(!isParagraphVisible)
+    }
+    
+    const sumar = () => setContador(contador + 1)
+    const restar = () => setContador(contador - 1)
+    const resetear = () => setContador(0)
+
+
     return (
-        <>
-        <h1>Nivel 5: Renderizado condicional</h1>
-        {button}
-        {user ? <p>Bienvenido, {user.name}.</p> : <p>Inicia sesión para
-    continuar.</p>}
-
-        <hr />
-
-        <button onClick={() => setNewEmails((n) => n + 1)}>+1
-    email</button>
-        <button onClick={() => setNewEmails(0)}>Reset</button>
-
-        {newEmails > 0 && (
-        <h2>Tienes {newEmails} correos nuevos.</h2>
-        )}
-        </>
+    <>
+    <h1>Miniretillo de Rubén</h1>
+    {isParagraphVisible && (
+    <p>Parrafo donde se verá todo:</p>
+    )}
+    <button onClick={toggleStatus}>
+    {isParagraphVisible ? 'Esconder' : 'Enseñar'} texto
+    </button>
+    <br/>
+    <br/>
+    <p>Valor del contador: {contador}</p>
+    <br/>
+    <br/>
+    <button onClick={sumar}>+1</button>
+    <button onClick={restar}>-1</button>
+    <button onClick={resetear}>Reset</button>
+    </>
     )
+
 }
+
+export default App
