@@ -9,7 +9,11 @@ function App() {
     }
     
     const sumar = () => setContador(contador + 1)
-    const restar = () => setContador(contador - 1)
+    const restar = () => {
+        if (contador > 0) {
+        setContador(contador - 1)
+        }
+    }
     const resetear = () => setContador(0)
 
 
@@ -24,8 +28,8 @@ function App() {
     </button>
     <br/>
     <br/>
+    
     <p>Valor del contador: {contador}</p>
-    <br/>
     <br/>
     <button onClick={sumar}>+1</button>
     <button onClick={restar}>-1</button>
