@@ -3,6 +3,7 @@ import { useState } from 'react'
 function App() {
 
     const [isParagraphVisible, setIsParagraphVisible] = useState(true)
+    const [modo, setModo] = useState('')
     const [contador, setContador] = useState(0)
     const toggleStatus = () => {
     setIsParagraphVisible(!isParagraphVisible)
@@ -34,6 +35,17 @@ function App() {
     <button onClick={sumar}>+1</button>
     <button onClick={restar}>-1</button>
     <button onClick={resetear}>Reset</button>
+
+    <br/>
+    <br/>
+    <h1>Tu mood:</h1>
+        <input
+        type="text"
+        placeholder="Escribe el modo"
+        value={modo}
+        onChange={(e) => setModo(e.target.value)}
+        />
+    <p>Tu modo es: <strong>{modo || '...'} </strong></p>
     </>
     )
 
