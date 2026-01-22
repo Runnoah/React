@@ -1,0 +1,15 @@
+
+.paragraph-text{
+    font-size: "25px";
+    color: purple;
+}
+
+.paragraph-text:hover{
+    color:turquoise;
+}
+
+@media (max-width: 800px) {
+    .paragraph-text{
+        font-size:"20px"
+    }
+}

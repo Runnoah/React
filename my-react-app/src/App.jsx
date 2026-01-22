@@ -1,54 +1,26 @@
-import { useState } from 'react'
 
 function App() {
-
-    const [isParagraphVisible, setIsParagraphVisible] = useState(true)
-    const [modo, setModo] = useState('')
-    const [contador, setContador] = useState(0)
-    const toggleStatus = () => {
-    setIsParagraphVisible(!isParagraphVisible)
-    }
-    
-    const sumar = () => setContador(contador + 1)
-    const restar = () => {
-        if (contador > 0) {
-        setContador(contador - 1)
-        }
-    }
-    const resetear = () => setContador(0)
-
-
     return (
-    <>
-    <h1>Miniretillo de Rubén</h1>
-    {isParagraphVisible && (
-    <p>Parrafo donde se verá todo:</p>
-    )}
-    <button onClick={toggleStatus}>
-    {isParagraphVisible ? 'Esconder' : 'Enseñar'} texto
-    </button>
-    <br/>
-    <br/>
+        <>
+            <h1 className="titulo">Carta del Miniretillo</h1>
+            
+            <p className="descripcion">
+                Esto es una descripción para la carta, algo asi, cortita, 
+                vamos a añadirle un proverbio chino: Si me engañas una vez 
+                la culpa es tuya, si me engañas dos veces la culpa es mía.
+            </p>
     
-    <p>Valor del contador: {contador}</p>
-    <br/>
-    <button onClick={sumar}>+1</button>
-    <button onClick={restar}>-1</button>
-    <button onClick={resetear}>Reset</button>
+            <br/>
+            <div className="centrado">
 
-    <br/>
-    <br/>
-    <h1>Tu mood:</h1>
-        <input
-        type="text"
-        placeholder="Escribe el modo"
-        value={modo}
-        onChange={(e) => setModo(e.target.value)}
-        />
-    <p>Tu modo es: <strong>{modo || '...'} </strong></p>
-    </>
-    )
-
+            <button className="claseBoton">
+            Botón de la carta
+            </button>
+        
+            </div>
+        </>
+    );
 }
 
 export default App
+
